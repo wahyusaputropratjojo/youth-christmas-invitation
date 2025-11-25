@@ -10,7 +10,7 @@ export function Footer() {
         target="_blank"
       >
         <div className="space-y-1 p-4">
-          <p className="text-[8px]">Design and Developed by</p>
+          <p className="text-[8px]">Designed and Developed by</p>
           <div className="flex justify-between font-bold text-xs">
             <p>Wahyu Saputro Pratjojo</p>
             <p>@opos___</p>
