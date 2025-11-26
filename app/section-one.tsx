@@ -3,78 +3,96 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
-import Image from "next/image";
 import { ChristmasTree } from "@/assets/christmas-tree";
 
-export function SectionOne() {
-  useGSAP(() => {
-    SplitText.create("#title", {
-      mask: "lines",
-      onSplit(self) {
-        return gsap.fromTo(
-          self.chars,
-          {
-            opacity: 0,
-            yPercent: 80,
-          },
-          {
-            duration: 1,
-            ease: "expo.inOut",
-            opacity: 1,
-            stagger: 0.05,
-            yPercent: 0,
-          },
-        );
-      },
-      type: "chars lines",
-    });
+type SectionOneProps = {
+	to?: string;
+};
 
-    SplitText.create(".reveal", {
-      mask: "lines",
-      onSplit(self) {
-        return gsap.fromTo(
-          self.words,
-          {
-            opacity: 0,
-            yPercent: 100,
-          },
-          {
-            duration: 1,
-            ease: "expo.out",
-            opacity: 1,
-            stagger: 0.1,
-            yPercent: 0,
-          },
-        );
-      },
-      type: "words lines",
-    });
-  }, []);
+gsap.registerPlugin(SplitText, useGSAP);
 
-  return (
-    <section className="h-svh relative px-4 py-12 flex flex-col justify-between border bg-[#f2efe6] text-[#161c26] sm:rounded-3xl sm:px-12">
-      <div className="flex justify-between">
-        <p className="text-[10px]/3 uppercase font-medium w-min reveal">
-          Youth of Smirna
-        </p>
-        <p className="text-[10px]/3 uppercase font-medium text-right w-min reveal">
-          Tim Kerja 2025
-        </p>
-      </div>
-      <div className="sm:w-[50%] w-full mx-auto">
-        <ChristmasTree />
-      </div>
-      <div>
-        <h1
-          className="font-bold text-[18vw] sm:text-9xl/40 tracking-tighter"
-          id="title"
-        >
-          Undangan.
-        </h1>
-        <p className="tracking-tighter uppercase max-w-[24ch] text-[10px]/3 font-medium reveal">
-          Ibadah Natal Pemuda GMIM Smirna Batulubang.
-        </p>
-      </div>
-    </section>
-  );
+export function SectionOne({ to }: SectionOneProps) {
+	useGSAP(() => {
+		SplitText.create("#title", {
+			mask: "lines",
+			onSplit(self) {
+				return gsap.fromTo(
+					self.chars,
+					{
+						opacity: 0,
+						yPercent: 80,
+					},
+					{
+						duration: 1,
+						ease: "expo.inOut",
+						opacity: 1,
+						stagger: 0.05,
+						yPercent: 0,
+					},
+				);
+			},
+			type: "chars lines",
+		});
+
+		SplitText.create(".reveal", {
+			mask: "lines",
+			onSplit(self) {
+				return gsap.fromTo(
+					self.lines,
+					{
+						opacity: 0,
+						yPercent: 100,
+					},
+					{
+						duration: 1,
+						ease: "expo.out",
+						opacity: 1,
+						stagger: 0.1,
+						yPercent: 0,
+					},
+				);
+			},
+			type: "lines",
+		});
+	}, []);
+
+	return (
+		<section className="relative flex min-h-screen flex-col overflow-hidden bg-[#f2efe6] text-[#161c26]">
+			<div className="flex flex-1 flex-col justify-between px-4 py-8 sm:p-12">
+				<div className="flex justify-between">
+					<p className="reveal w-min font-medium text-xs/3.5 uppercase">
+						Youth of Smirna
+					</p>
+					<p className="reveal w-min text-right font-medium text-xs/3.5 uppercase">
+						Tim Kerja 2025
+					</p>
+				</div>
+
+				<div className="mx-auto w-full sm:w-[50%]">
+					<ChristmasTree />
+				</div>
+
+				<div>
+					<h1
+						className="font-bold text-[15vw] tracking-tighter sm:text-9xl/40"
+						id="title"
+					>
+						Undangan.
+					</h1>
+					<p className="reveal font-medium text-xl tracking-tighter">
+						Ibadah Natal Pemuda GMIM Smirna Batulubang.
+					</p>
+				</div>
+			</div>
+
+			{to && (
+				<div className="space-y-1 justify-self-end bg-[#234940] px-4 py-8 text-[#f2efe6] sm:px-12">
+					<p className="w-fit rounded-full font-bold text-xs uppercase">
+						Kepada
+					</p>
+					<p className="font-medium text-lg">{to}</p>
+				</div>
+			)}
+		</section>
+	);
 }
