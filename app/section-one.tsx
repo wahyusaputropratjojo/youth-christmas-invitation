@@ -35,6 +35,27 @@ export function SectionOne({ to }: SectionOneProps) {
 		});
 
 		SplitText.create(".reveal", {
+			mask: "words",
+			onSplit(self) {
+				return gsap.fromTo(
+					self.words,
+					{
+						opacity: 0,
+						yPercent: 100,
+					},
+					{
+						duration: 1,
+						ease: "expo.out",
+						opacity: 1,
+						stagger: 0.1,
+						yPercent: 0,
+					},
+				);
+			},
+			type: "words",
+		});
+
+		SplitText.create("#reveal-lines", {
 			mask: "lines",
 			onSplit(self) {
 				return gsap.fromTo(
@@ -57,13 +78,13 @@ export function SectionOne({ to }: SectionOneProps) {
 	}, []);
 
 	return (
-		<section className="relative flex min-h-screen flex-col overflow-hidden bg-[#f2efe6] text-[#161c26]">
+		<section className="relative flex min-h-svh flex-col overflow-hidden bg-[#f2efe6] text-[#234940]">
 			<div className="flex flex-1 flex-col justify-between px-4 py-8 sm:p-12">
 				<div className="flex justify-between">
-					<p className="reveal w-min font-medium text-xs/3.5 uppercase">
+					<p className="reveal w-min font-medium text-[10px]/3 uppercase">
 						Youth of Smirna
 					</p>
-					<p className="reveal w-min text-right font-medium text-xs/3.5 uppercase">
+					<p className="reveal w-min text-right font-medium text-[10px]/3 uppercase">
 						Tim Kerja 2025
 					</p>
 				</div>
@@ -79,8 +100,9 @@ export function SectionOne({ to }: SectionOneProps) {
 					>
 						Undangan.
 					</h1>
-					<p className="reveal font-medium text-xl tracking-tighter">
-						Ibadah Natal Pemuda GMIM Smirna Batulubang.
+					<p className="font-medium tracking-tighter" id="reveal-lines">
+						Ibadah Perayaan Sambut Natal Pemuda GMIM Smirna Batulubang dan
+						Pemuda Wilayah Bitung IV.
 					</p>
 				</div>
 			</div>
