@@ -32,10 +32,10 @@ export function ChristmasTree() {
 					},
 				)
 				.to("#star", {
-					duration: 3,
-					ease: "bounce.inOut",
+					duration: 1,
+					ease: "expo.inOut",
 					repeat: -1,
-					rotate: 240,
+					rotate: 45,
 					transformOrigin: "center center",
 					yoyo: true,
 				});
