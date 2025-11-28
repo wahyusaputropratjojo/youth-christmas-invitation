@@ -40,7 +40,7 @@ export function SectionThree() {
 					</div>
 					<div className="flex items-center gap-2 rounded-full bg-[#f2efe6] p-2 text-[#234940]">
 						<p className="rounded-full bg-[#234940] p-4 text-center font-black text-4xl text-[#f2efe6] uppercase">
-							14
+							19
 						</p>
 						<p className="flex-1 rounded-full bg-[#234940] p-4 text-center font-black text-4xl text-[#f2efe6] uppercase">
 							Desember
