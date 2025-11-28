@@ -9,7 +9,7 @@ export function Footer() {
 				<div className="flex items-center gap-2">
 					<Image
 						alt="Wahyu Saputro Pratjojo - Profile"
-						className="size-12 rounded-full border-2 border-blue-500"
+						className="size-12 rounded-full border-2 border-[#234940]"
 						src={Profile}
 					/>
 					<div>
@@ -25,7 +25,7 @@ export function Footer() {
 					target="_blank"
 				>
 					<button
-						className="h-8 cursor-pointer rounded-full bg-blue-500 px-3 font-bold text-sm"
+						className="h-8 cursor-pointer rounded-full bg-[#234940] px-3 font-bold text-[#f2efe6] text-sm"
 						type="button"
 					>
 						Follow
