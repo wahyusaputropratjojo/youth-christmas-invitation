@@ -6,6 +6,7 @@ import { useActionState, useState } from "react";
 import { generateShortLink } from "@/app/actions";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/field";
+import { Spinner } from "@/components/ui/spinner";
 import { TextField } from "@/components/ui/text-field";
 import { Textarea } from "@/components/ui/textarea";
 
@@ -42,8 +43,14 @@ export default function Page() {
 							<Label>Tujuan</Label>
 							<Textarea className="min-h-32" />
 						</TextField>
-						<Button isDisabled={!tujuan} isPending={isPending} type="submit">
-							Buat Link
+						<Button
+							isDisabled={!tujuan}
+							isPending={isPending}
+							size="lg"
+							type="submit"
+						>
+							{isPending && <Spinner />}
+							{isPending ? "Membuat" : "Buat Link"}
 						</Button>
 					</form>
 				</section>
@@ -54,12 +61,12 @@ export default function Page() {
 					<div className="min-h-32 w-full rounded-xl border p-4">
 						<p>{data?.shortUrl}</p>
 					</div>
-					<Button isPending={isCopied} onPress={handleCopy}>
+					<Button isPending={isCopied} onPress={handleCopy} size="lg">
 						{isCopied ? <CheckIcon size={16} /> : <CopyIcon size={16} />}
 						{isCopied ? "Tersalin!" : "Salin Link"}
 					</Button>
 					<Link href="/generate">
-						<Button className="w-full" intent="outline">
+						<Button className="w-full" intent="outline" size="lg">
 							Reset
 						</Button>
 					</Link>
