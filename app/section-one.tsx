@@ -108,11 +108,9 @@ export function SectionOne({ to }: SectionOneProps) {
 			</div>
 
 			{to && (
-				<div className="space-y-1 justify-self-end bg-[#234940] px-4 py-8 text-[#f2efe6] sm:px-12">
-					<p className="w-fit rounded-full font-bold text-xs uppercase">
-						Kepada
-					</p>
-					<p className="font-medium text-lg">{to}</p>
+				<div className="space-y-1 justify-self-end bg-[#234940] px-4 py-4 text-[#f2efe6] sm:px-12">
+					<p className="reveal w-fit rounded-full font-bold text-xs">Kepada</p>
+					<p className="reveal font-medium text-lg">{to}</p>
 				</div>
 			)}
 		</section>
