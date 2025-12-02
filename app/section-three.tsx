@@ -32,7 +32,7 @@ export function SectionThree() {
 				<p className="font-semibold text-xl tracking-tight sm:text-3xl">
 					Yang akan dilaksanakan pada,
 				</p>
-				<div>
+				<div className="space-y-2">
 					<div className="flex items-center gap-2 rounded-full bg-[#f2efe6] p-2 text-[#234940]">
 						<p className="flex-1 rounded-full bg-[#234940] p-4 text-center font-black text-4xl text-[#f2efe6] uppercase">
 							Jumat
@@ -48,7 +48,7 @@ export function SectionThree() {
 					</div>
 					<div className="flex items-center gap-2 rounded-full bg-[#f2efe6] p-2 text-[#234940]">
 						<p className="flex-1 rounded-full bg-[#234940] p-4 text-center font-black text-4xl text-[#f2efe6] uppercase">
-							16:00
+							17:00
 						</p>
 						<p className="rounded-full bg-[#234940] p-4 text-center font-black text-4xl text-[#f2efe6] uppercase">
 							Wita
