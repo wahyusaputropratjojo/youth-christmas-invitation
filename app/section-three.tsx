@@ -24,11 +24,12 @@ export function SectionThree() {
 					<p className="w-min rounded-xl font-bold text-[#f2efe6] text-xl italic tracking-tight sm:text-3xl">
 						Dresscode
 					</p>
-					<div className="grid h-12 grid-cols-4 gap-2">
+					<div className="grid h-12 grid-cols-5 gap-2">
 						<div className="size-full rounded-lg bg-[#7aaccd]" />
 						<div className="size-full rounded-lg bg-[#d1edff]" />
 						<div className="size-full rounded-lg bg-[#fce268]" />
 						<div className="size-full rounded-lg bg-[#fdf3af]" />
+						<div className="size-full rounded-lg bg-[#d8d8d6]" />
 					</div>
 				</div>
 				<p className="font-semibold text-xl tracking-tight first-letter:float-left first-letter:mr-3 first-letter:text-5xl first-letter:italic sm:text-3xl sm:first-letter:mr-6 sm:first-letter:text-8xl">
