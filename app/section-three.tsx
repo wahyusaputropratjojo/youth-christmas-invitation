@@ -20,6 +20,17 @@ export function SectionThree() {
 						surga." - Matius 5 : 16
 					</p>
 				</div>
+				<div className="space-y-2 rounded-3xl border-2 border-[#f2efe6] p-8">
+					<p className="w-min rounded-xl font-bold text-[#f2efe6] text-xl italic tracking-tight sm:text-3xl">
+						Dresscode
+					</p>
+					<div className="grid h-12 grid-cols-4 gap-2">
+						<div className="size-full rounded-lg bg-[#7aaccd]" />
+						<div className="size-full rounded-lg bg-[#d1edff]" />
+						<div className="size-full rounded-lg bg-[#fce268]" />
+						<div className="size-full rounded-lg bg-[#fdf3af]" />
+					</div>
+				</div>
 				<p className="font-semibold text-xl tracking-tight first-letter:float-left first-letter:mr-3 first-letter:text-5xl first-letter:italic sm:text-3xl sm:first-letter:mr-6 sm:first-letter:text-8xl">
 					Melalui undangan ini, kami Komisi Pemuda GMIM Smirna Batulubang,
 					mengundang teman - teman untuk dapat hadir dalam satu persekutuan
