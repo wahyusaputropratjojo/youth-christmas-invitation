@@ -11,8 +11,6 @@ export default async function Home({
 }) {
 	const { to } = await searchParams;
 
-	console.log(to);
-
 	return (
 		<main className="container mx-auto max-w-3xl overflow-hidden">
 			<div className="relative">
